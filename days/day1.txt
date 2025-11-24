@@ -1,0 +1,1 @@
+Scaffold repo, create model.Employee, create simple File DAO, README initial.
