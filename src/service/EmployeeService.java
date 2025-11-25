@@ -1,4 +1,3 @@
-
 package service;
 
 import dao.EmployeeDao;
@@ -7,18 +6,19 @@ import model.Employee;
 import java.util.List;
 
 public class EmployeeService {
-    private final EmployeeDao dao;
 
-    public EmployeeService(EmployeeDao dao) {
-        this.dao = dao;
+    private final EmployeeDao employeeDao;
+
+    public EmployeeService(EmployeeDao employeeDao) {
+        this.employeeDao = employeeDao;
     }
 
-    public boolean addEmployee(Employee e) {
-        // business validations can go here
-        return dao.save(e);
+    public void addEmployee(Employee employee) {
+        employeeDao.save(employee);
+        System.out.println("Employee added successfully!");
     }
 
-    public List<Employee> listAll() {
-        return dao.findAll();
+    public List<Employee> getAllEmployees() {
+        return employeeDao.findAll();
     }
 }
