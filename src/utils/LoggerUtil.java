@@ -1,26 +1,23 @@
-
 package utils;
 
-import java.io.IOException;
-import java.util.logging.FileHandler;
-import java.util.logging.Logger;
-import java.util.logging.SimpleFormatter;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class LoggerUtil {
-    private static final Logger logger = Logger.getLogger("EEMS_LOGGER");
 
-    public static void init() {
-        try {
-            FileHandler fh = new FileHandler("logs/eems.log", true);
-            fh.setFormatter(new SimpleFormatter());
-            logger.addHandler(fh);
-            logger.info("Logger initialized.");
-        } catch (IOException ex) {
-            ex.printStackTrace();
-        }
+    private static String timestamp() {
+        return LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
     }
 
-    public static Logger getLogger() {
-        return logger;
+    public static void info(String msg) {
+        System.out.println("[INFO]  " + timestamp() + " | " + msg);
+    }
+
+    public static void warn(String msg) {
+        System.out.println("[WARN]  " + timestamp() + " | " + msg);
+    }
+
+    public static void error(String msg) {
+        System.err.println("[ERROR] " + timestamp() + " | " + msg);
     }
 }
