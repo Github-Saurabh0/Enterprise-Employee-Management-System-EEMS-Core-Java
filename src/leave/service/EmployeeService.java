@@ -7,18 +7,29 @@ import java.util.List;
 
 public class EmployeeService {
 
-    private final EmployeeDao employeeDao;
+    private final EmployeeDao dao;
 
-    public EmployeeService(EmployeeDao employeeDao) {
-        this.employeeDao = employeeDao;
+    public EmployeeService(EmployeeDao dao) {
+        this.dao = dao;
     }
 
-    public void addEmployee(Employee employee) {
-        employeeDao.save(employee);
-        System.out.println("Employee added successfully!");
+    public void addEmployee(Employee e) {
+        dao.save(e);
     }
 
     public List<Employee> getAllEmployees() {
-        return employeeDao.findAll();
+        return dao.findAll();
+    }
+
+    public Employee getEmployeeById(int id) {
+        return dao.findById(id);
+    }
+
+    public boolean updateEmployee(Employee e) {
+        return dao.update(e);
+    }
+
+    public boolean deleteEmployee(int id) {
+        return dao.delete(id);
     }
 }
