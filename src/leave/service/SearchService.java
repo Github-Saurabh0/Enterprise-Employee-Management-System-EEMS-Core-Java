@@ -7,15 +7,15 @@ import java.util.stream.Collectors;
 
 public class SearchService {
 
-    public List<Employee> searchByName(List<Employee> list, String keyword) {
+    public List<Employee> searchByName(List<Employee> list, String name) {
         return list.stream()
-                .filter(e -> e.getName().toLowerCase().contains(keyword.toLowerCase()))
+                .filter(e -> e.getName().toLowerCase().contains(name.toLowerCase()))
                 .collect(Collectors.toList());
     }
 
-    public List<Employee> searchByDepartment(List<Employee> list, String department) {
+    public List<Employee> searchByDepartment(List<Employee> list, String dept) {
         return list.stream()
-                .filter(e -> e.getDepartment().equalsIgnoreCase(department))
+                .filter(e -> e.getDepartment().equalsIgnoreCase(dept))
                 .collect(Collectors.toList());
     }
 
