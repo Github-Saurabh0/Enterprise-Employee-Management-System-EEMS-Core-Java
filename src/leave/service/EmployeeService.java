@@ -22,7 +22,7 @@ public class EmployeeService {
         return dao.getAll();
     }
 
-    // NEW: Sorting utilities
+    // Sorting
     public List<Employee> sortByName() {
         List<Employee> list = dao.getAll();
         list.sort(EmployeeComparators.SORT_BY_NAME);
@@ -35,21 +35,15 @@ public class EmployeeService {
         return list;
     }
 
-    public List<Employee> sortByJoiningDate() {
-        List<Employee> list = dao.getAll();
-        list.sort(EmployeeComparators.SORT_BY_JOINING_DATE);
-        return list;
-    }
-
     public List<Employee> sortByDepartment() {
         List<Employee> list = dao.getAll();
         list.sort(EmployeeComparators.SORT_BY_DEPARTMENT);
         return list;
     }
 
-    public List<Employee> sortByRole() {
+    public List<Employee> sortByJoiningDate() {
         List<Employee> list = dao.getAll();
-        list.sort(EmployeeComparators.SORT_BY_ROLE);
+        list.sort(EmployeeComparators.SORT_BY_JOINING_DATE);
         return list;
     }
 }
