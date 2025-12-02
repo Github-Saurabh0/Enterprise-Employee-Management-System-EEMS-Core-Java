@@ -2,48 +2,33 @@ package service;
 
 import dao.EmployeeDao;
 import model.Employee;
-import utils.EmployeeComparators;
+import validation.ValidationException;
+import validation.ValidationService;
 
 import java.util.List;
 
 public class EmployeeService {
 
     private final EmployeeDao dao;
+    private final ValidationService validator = new ValidationService();
 
     public EmployeeService(EmployeeDao dao) {
         this.dao = dao;
     }
 
     public void addEmployee(Employee e) {
+        if (e == null) throw new ValidationException("Employee cannot be null.");
+
+        validator.validateName(e.getName());
+        validator.validateDepartment(e.getDepartment());
+
+        if (e.getSalary() <= 0)
+            throw new ValidationException("Salary must be greater than 0.");
+
         dao.save(e);
     }
 
     public List<Employee> getAllEmployees() {
         return dao.getAll();
-    }
-
-    // Sorting
-    public List<Employee> sortByName() {
-        List<Employee> list = dao.getAll();
-        list.sort(EmployeeComparators.SORT_BY_NAME);
-        return list;
-    }
-
-    public List<Employee> sortBySalary() {
-        List<Employee> list = dao.getAll();
-        list.sort(EmployeeComparators.SORT_BY_SALARY);
-        return list;
-    }
-
-    public List<Employee> sortByDepartment() {
-        List<Employee> list = dao.getAll();
-        list.sort(EmployeeComparators.SORT_BY_DEPARTMENT);
-        return list;
-    }
-
-    public List<Employee> sortByJoiningDate() {
-        List<Employee> list = dao.getAll();
-        list.sort(EmployeeComparators.SORT_BY_JOINING_DATE);
-        return list;
     }
 }
