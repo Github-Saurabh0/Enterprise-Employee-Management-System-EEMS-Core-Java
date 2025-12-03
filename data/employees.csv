@@ -1,1 +1,6 @@
-1,Saurabh Kushwaha,saurabh@example.com,Engineering,Developer,45000.0,2025-11-23
+id,name,email,department,role,salary,joiningDate
+1,John Doe,john@example.com,IT,Developer,65000,2025-01-01
+2,Amit Sharma,amit@example.com,HR,Manager,52000,2025-01-02
+3,Saurabh Kumar,saurabh@example.com,Finance,Analyst,58000,2025-01-03
+4,Neha Verma,neha@example.com,Marketing,Executive,45000,2025-01-04
+5,Rahul Singh,rahul@example.com,IT,Tester,40000,2025-01-05
