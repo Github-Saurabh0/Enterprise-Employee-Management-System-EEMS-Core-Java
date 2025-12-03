@@ -1,11 +1,36 @@
 
-# High Level Design (HLD) - EEMS (skeleton)
+# High Level Design (HLD) – EEMS
 
-Goals
-- Lightweight, file-based persistence
-- Modular layers: model, dao, service, utils, scheduler
-- Clear separation of concerns and testability
+## 1. Architecture Overview
+A layered, modular architecture:
 
-Components
-- App (CLI) -> Services -> DAOs -> File Storage (CSV/JSON/serialized)
-- Scheduler for background reports using ExecutorService
+App (CLI)
+   ↓
+Services (Business Logic)
+   ↓
+DAO Layer (File-based persistence)
+   ↓
+Storage (CSV + Serialized Data)
+
+## 2. Major Modules
+
+✔ Employee Module  
+✔ Leave Module  
+✔ Payroll Module  
+✔ Reporting Module  
+✔ Validation Module  
+✔ Utilities  
+
+## 3. Data Flow
+App → Service → DAO → File  
+App → Reporting Service → CSV File  
+
+## 4. Concurrency
+- ExecutorService for background scheduled reporting  
+
+## 5. Non-functional Requirements
+- Maintainability  
+- Modularity  
+- Efficiency  
+- Reliability  
+- Low memory footprint using pure Java  

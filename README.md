@@ -18,7 +18,9 @@ Quick setup (for local Java dev)
 3. Run: java -cp out app.App
    - (Note: simple file-based persistence; no DB configured. This is a starter skeleton.)
 
-10-Day Plan Summary
+---
+## 10-Day Plan Summary
+
 - Day 1 - Project scaffolding, models (Employee), basic DAO (file-based), README
 - Day 2 - Employee CRUD, EmployeeService, unit-runner app menu
 - Day 3 - Authentication, Password hashing, Logger util
@@ -34,24 +36,45 @@ Notes
 - This repo is intended as an industry-level core Java learning project and resume/demo piece.
 - You can extend it with JDBC integration, REST wrapper, or a simple Swing/JavaFX GUI in future iterations.
 
-#
+---
 
-Repo Structure:
+##  Directory Structure
 
-- README.md
-- /src
-  - /model
-    - Employee.java
-  - /service
-    - EmployeeService.java
-  - /dao
-    - EmployeeDao.java
-  - /utils
-    - LoggerUtil.java
-  - App.java
-- /days
-  - day1.txt
-  - day2.txt
+/src  
+├── app  
+├── dao  
+├── model  
+├── service  
+├── leave  
+├── payroll  
+├── reporting  
+├── validation  
+├── utils  
+├── exceptions  
+└── tests  
+
+/docs  
+- HLD.md  
+- LLD.md  
+
+/days  
+- day1.txt → day10.txt  
+
+---
+
+##  How to Run
+
+### 1. Compile
+```
+javac -d out src/**/*.java
+```
+
+### 2. Run
+```
+java -cp out app.App
+```
+
+---
 
 
 ##  Contact & Support

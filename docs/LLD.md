@@ -1,8 +1,29 @@
 
-# Low Level Design (LLD) - EEMS (skeleton)
+# Low Level Design (LLD) – Enterprise Employee Management System
 
-Key Classes (examples)
-- model.Employee {id, name, email, department, role, salary, joiningDate}
-- dao.FileEmployeeDaoImpl implements EmployeeDao { uses CSV file 'data/employees.csv' }
-- service.EmployeeService { business rules for add/update/delete/search }
-- payroll.PayrollEngine { calculatePayslip(Employee) }
+## 1. Model Classes
+Employee  
+Leave  
+Payroll (Base Class)  
+FullTimePayroll / PartTimePayroll  
+
+## 2. DAO Classes
+EmployeeDao  
+FileEmployeeDaoImpl  
+SerializedEmployeeDaoImpl  
+LeaveDao  
+
+## 3. Services
+EmployeeService  
+LeaveService  
+PayrollService  
+SearchService  
+
+## 4. Utils
+CSVExporter  
+LoggerUtil  
+EmployeeComparators  
+ValidationService  
+
+## 5. Scheduler
+ReportScheduler  
