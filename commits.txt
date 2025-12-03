@@ -1,0 +1,10 @@
+1. day1: scaffolded project, added model.Employee, FileEmployeeDaoImpl, README
+2. day2: added EmployeeService, App.java, sample flows
+3. day3: added LoggerUtil, authentication skeleton
+4. day4: added leave module and custom exceptions
+5. day5: added payroll engine and employee types
+6. day6: added reporting and scheduler skeleton
+7. day7: improved persistence, added migration util
+8. day8: added search & sorting helpers
+9. day9: added validation, error handling, tests skeleton
+10. day10: final polish, added docs, demo data, finalized README
